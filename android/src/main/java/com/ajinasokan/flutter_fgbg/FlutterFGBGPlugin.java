@@ -28,7 +28,8 @@ public class FlutterFGBGPlugin implements FlutterPlugin, ActivityAware, Lifecycl
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    new EventChannel(flutterPluginBinding.getDartExecutor().getBinaryMessenger(), 
+    // new EventChannel(flutterPluginBinding.getDartExecutor().getBinaryMessenger(),
+    new EventChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor().getBinaryMessenger(), ...)
                  "com.ajinasokan.flutter_fgbg/events")
             .setStreamHandler(this);
     // new EventChannel(flutterPluginBinding.getBinaryMessenger(), "com.ajinasokan.flutter_fgbg/events")
